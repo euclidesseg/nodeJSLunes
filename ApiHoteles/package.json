@@ -1,0 +1,14 @@
+{
+  "name": "apihoteles",
+  "version": "1.0.0",
+  "description": "Api para la gestion de habitaciones y reservas en un hotel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "EUCLIDES",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
