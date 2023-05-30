@@ -26,7 +26,6 @@ export class ControladorHabitaciones{
             let idHabitacion=peticion.params.idhabitacion
             
             respuesta.status(200).json({
-                "mensaje":"Exito buscando la habitacion...",
                 "habitacion":await habitacionService.buscarPorId(idHabitacion)
             })
         }
@@ -40,10 +39,9 @@ export class ControladorHabitaciones{
         let habitacionService = new ServicioHabitacion()
 
         try{
-            respuesta.status(200).json({
-                "mensaje":"Exito exito buscando las habitaciones...",
-                "habitaciones": await habitacionService.buscarTodas()
-            })
+            respuesta.status(200).json(
+                await habitacionService.buscarTodas()
+            )
         }
         catch(error){
             respuesta.status(400).json({
@@ -59,7 +57,6 @@ export class ControladorHabitaciones{
         try{
             await habitacionService.editar(idHabitacion, datosHabitacion)
             respuesta.status(200).json({
-                "mensaje":"Exito editando las habitaciones..."
             })
         }
         catch(error){
